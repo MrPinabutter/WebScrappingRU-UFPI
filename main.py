@@ -2,9 +2,11 @@ from flask import Flask, jsonify
 import requests
 from bs4 import BeautifulSoup
 from PyPDF2 import PdfReader
+from flask_cors import CORS
 
 def create_app():
     app = Flask(__name__)
+    CORS(app)
 
     @app.route('/dias_da_semana', methods=['GET'])
     def get_dias_da_semana():
