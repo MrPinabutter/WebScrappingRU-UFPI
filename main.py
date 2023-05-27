@@ -8,7 +8,7 @@ from flask_caching import Cache
 def create_app():
     cache = Cache(config={'CACHE_TYPE': 'SimpleCache', 'CACHE_DEFAULT_TIMEOUT': 60 * 60 * 5})
     app = Flask(__name__)
-    cache.init_app()
+    cache.init_app(app)
     CORS(app)
 
     @app.route('/dias_da_semana', methods=['GET'])
