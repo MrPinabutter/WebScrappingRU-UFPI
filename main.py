@@ -12,7 +12,7 @@ def create_app():
     CORS(app)
 
     @app.route('/dias_da_semana', methods=['GET'])
-    @cache.cached(timeout=60 * 60 * 1) # 
+    @cache.cached(timeout=60 * 60 * 1)
     def get_dias_da_semana():
         # Send a request to the website
         url = 'https://ufpi.br/restaurante-universitario'
