@@ -10,6 +10,10 @@ app = Flask(__name__)
 cache.init_app(app)
 CORS(app)
 
+@app.route('/', methods=['GET'])
+def index():
+    return jsonify({'message': 'Works pretty fine! 🔥'}), 200
+
 @app.route('/dias_da_semana', methods=['GET'])
 @cache.cached(timeout=60 * 60 * 1)
 def get_dias_da_semana():
@@ -42,7 +46,6 @@ def get_dias_da_semana():
     pdf_file = open('document.pdf', 'rb')
     pdf_reader = PdfReader(pdf_file)
     page = pdf_reader.pages[0]
-    text = page.extract_text()
 
     # Segunda
     parts = []
