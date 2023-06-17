@@ -3,11 +3,11 @@ import requests
 from bs4 import BeautifulSoup
 from PyPDF2 import PdfReader
 from flask_cors import CORS
-from flask_caching import Cache
+# from flask_caching import Cache
 
-cache = Cache(config={'CACHE_TYPE': 'SimpleCache', 'CACHE_DEFAULT_TIMEOUT': 60 * 60 * 5})
+# cache = Cache(config={'CACHE_TYPE': 'SimpleCache', 'CACHE_DEFAULT_TIMEOUT': 60 * 60 * 5})
 app = Flask(__name__)
-cache.init_app(app)
+# cache.init_app(app)
 CORS(app)
 
 @app.route('/', methods=['GET'])
@@ -15,7 +15,7 @@ def index():
     return jsonify({'message': 'Works pretty fine! 🔥'}), 200
 
 @app.route('/dias_da_semana', methods=['GET'])
-@cache.cached(timeout=60 * 60 * 1)
+# @cache.cached(timeout=60 * 60 * 1)
 def get_dias_da_semana():
     # Send a request to the website
     url = 'https://ufpi.br/restaurante-universitario'
