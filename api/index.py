@@ -5,6 +5,7 @@ from PyPDF2 import PdfReader
 from flask_cors import CORS
 from flask_caching import Cache
 import os
+import io
 
 os.environ['NO_PROXY'] = '127.0.0.1'
 
@@ -42,12 +43,8 @@ def get_dias_da_semana():
 
     # Download the PDF file
     response = requests.get(pdf_url)
-    with open('document.pdf', 'wb') as f:
-        f.write(response.content)
 
-    # Search for specific content in the PDF file
-    pdf_file = open('document.pdf', 'rb')
-    pdf_reader = PdfReader(pdf_file)
+    pdf_reader = PdfReader(io.BytesIO(response.content))
     page = pdf_reader.pages[0]
 
     # Segunda
