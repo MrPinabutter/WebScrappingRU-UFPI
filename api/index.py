@@ -52,7 +52,7 @@ def get_dias_da_semana():
     def visitor_body_segunda(text, cm, tm, font_dict, font_size):
         y = tm[5]
         x = tm[4]
-        if y > 300 and y < 400 and x > 100 and x < 150:
+        if y > 310 and y < 390 and x > 100 and x < 150:
             parts.append(text)
 
     page.extract_text(visitor_text=visitor_body_segunda)
@@ -64,7 +64,7 @@ def get_dias_da_semana():
     def visitor_body_terca(text, cm, tm, font_dict, font_size):
         y = tm[5]
         x = tm[4]
-        if y > 300 and y < 400 and x > 150 and x < 200:
+        if y > 310 and y < 390 and x > 150 and x < 200:
             parts.append(text)
 
     page.extract_text(visitor_text=visitor_body_terca)
@@ -76,7 +76,7 @@ def get_dias_da_semana():
     def visitor_body_quarta(text, cm, tm, font_dict, font_size):
         y = tm[5]
         x = tm[4]
-        if y > 300 and y < 400 and x > 200 and x < 300:
+        if y > 310 and y < 390 and x > 200 and x < 300:
             parts.append(text)
 
     page.extract_text(visitor_text=visitor_body_quarta)
@@ -88,7 +88,7 @@ def get_dias_da_semana():
     def visitor_body_quinta(text, cm, tm, font_dict, font_size):
         y = tm[5]
         x = tm[4]
-        if y > 300 and y < 400 and x > 300 and x < 350:
+        if y > 310 and y < 390 and x > 300 and x < 350:
             parts.append(text)
 
     page.extract_text(visitor_text=visitor_body_quinta)
@@ -100,7 +100,7 @@ def get_dias_da_semana():
     def visitor_body_sexta(text, cm, tm, font_dict, font_size):
         y = tm[5]
         x = tm[4]
-        if y > 300 and y < 400 and x > 350 and x < 400:
+        if y > 310 and y < 390 and x > 350 and x < 400:
             parts.append(text)
 
     page.extract_text(visitor_text=visitor_body_sexta)
